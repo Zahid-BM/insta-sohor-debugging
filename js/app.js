@@ -39,25 +39,18 @@ const switchTab = (id) => {
     document.getElementById("liked").style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("reported").style.display = "none";
-    document.getElementById("liked").innerText = '';
-
+    document.getElementById("liked").innerText = '';/* bug fixed here */
     displayLikedPosts();
   } else {
     document.getElementById("reported").style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("liked").style.display = "none";
-    document.getElementById("reported").innerText = '';
+    document.getElementById("reported").innerText = ''; /* bug fixed here */
     displayReportedPosts();
   }
 };
 
 const createPost = (post) => {
-  /* 
-  ##############################################################################################################
-  My console.log for testing 
- ###############################################################################################################
-  */
-  // console.log(post);
   const userImage = post?.userImage; /* added to fix the bug */
   const image = post?.image;
   const div = document.createElement("article");
