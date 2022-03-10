@@ -27,7 +27,7 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-  return text.length < 30 ? text : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>"; /* b ug fixed here */
+  return text.length < 30 ? text /* bug fixed here */ : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 
 const switchTab = (id) => {
@@ -51,6 +51,11 @@ const switchTab = (id) => {
 };
 
 const createPost = (post) => {
+  /* 
+  ##############################################################################################################
+  My console.log for testing 
+ ###############################################################################################################
+  */
   console.log(post.description);
   const userImage = post?.userImage; /* added to fix the bug */
   const image = post?.image;
@@ -153,7 +158,7 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
   const reportedPosts = getReportedPosts();
-  posts.forEach((post) => {
+  reportedPosts /* bug fixed here */.forEach((post) => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
   });
